@@ -1,0 +1,125 @@
+ARP(8)                      Linux System Administrator's Manual                      ARP(8)
+
+NNAAMMEE
+       arp - manipulate the system ARP cache
+
+SSYYNNOOPPSSIISS
+       aarrpp [--vvnn] [--HH _t_y_p_e] [--ii _i_f] [--aaee] [_h_o_s_t_n_a_m_e]
+
+       aarrpp [--vv] [--ii _i_f] --dd _h_o_s_t_n_a_m_e [ppuubb]
+
+       aarrpp [--vv] [--HH _t_y_p_e] [--ii _i_f] --ss _h_o_s_t_n_a_m_e _h_w___a_d_d_r [tteemmpp]
+
+       aarrpp [--vv] [--HH _t_y_p_e] [--ii _i_f] --ss _h_o_s_t_n_a_m_e _h_w___a_d_d_r [nneettmmaasskk _n_m] ppuubb
+
+       aarrpp [--vv] [--HH _t_y_p_e] [--ii _i_f] --DDss _h_o_s_t_n_a_m_e _i_f_n_a_m_e [nneettmmaasskk _n_m] ppuubb
+
+       aarrpp [--vvnnDD] [--HH _t_y_p_e] [--ii _i_f] --ff [_f_i_l_e_n_a_m_e]
+
+DDEESSCCRRIIPPTTIIOONN
+       AArrpp  manipulates  or  displays the kernel's IPv4 network neighbour cache. It can add
+       entries to the table, delete one or display the current content.
+
+       AARRPP stands for Address Resolution Protocol, which is used to find the  media  access
+       control address of a network neighbour for a given IPv4 Address.
+
+MMOODDEESS
+       aarrpp with no mode specifier will print the current content of the table. It is possi‐
+       ble to limit the number of entries printed, by specifying an hardware address  type,
+       interface name or host address.
+
+       aarrpp --dd _a_d_d_r_e_s_s will delete a ARP table entry. Root or netadmin privilege is required
+       to do this. The entry is found by IP address. If a hostname is  given,  it  will  be
+       resolved before looking up the entry in the ARP table.
+
+       aarrpp  --ss  _a_d_d_r_e_s_s  _h_w___a_d_d_r  is  used  to  set up a new table entry. The format of the
+       _h_w___a_d_d_r parameter is dependent on the hardware class, but for most classes  one  can
+       assume  that  the usual presentation can be used.  For the Ethernet class, this is 6
+       bytes in hexadecimal, separated by colons. When adding proxy arp  entries  (that  is
+       those  with the ppuubblish flag set) a nneettmmaasskk may be specified to proxy arp for entire
+       subnets. This is not good practice, but is supported by older kernels because it can
+       be  useful.  If  the tteemmpp flag is not supplied entries will be permanent stored into
+       the ARP cache. To simplify setting up entries for one of  your  own  network  inter‐
+       faces,  you  can  use  the  aarrpp  --DDss  _a_d_d_r_e_s_s _i_f_n_a_m_e form. In that case the hardware
+       address is taken from the interface with the specified name.
+
+OOPPTTIIOONNSS
+       --vv,, ----vveerrbboossee
+              Tell the user what is going on by being verbose.
+
+       --nn,, ----nnuummeerriicc
+              shows numerical addresses instead of trying to determine symbolic host,  port
+              or user names.
+
+       --HH _t_y_p_e, ----hhww--ttyyppee _t_y_p_e, --tt _t_y_p_e
+              When  setting  or  reading  the  ARP cache, this optional parameter tells aarrpp
+              which class of entries it should check for.  The default value of this param‐
+              eter  is  eetthheerr  (i.e.  hardware  code  0x01 for IEEE 802.3 10Mbps Ethernet).
+              Other values might include network technologies such  as  ARCnet  (aarrccnneett)  ,
+              PROnet (pprroonneett) , AX.25 (aaxx2255) and NET/ROM (nneettrroomm).
+
+       --aa     Use alternate BSD style output format (with no fixed columns).
+
+       --ee     Use default Linux style output format (with fixed columns).
+
+       --DD,, ----uussee--ddeevviiccee
+              Instead  of  a  hw_addr, the given argument is the name of an interface.  aarrpp
+              will use the MAC address of that interface for the table entry. This is  usu‐
+              ally the best option to set up a proxy ARP entry to yourself.
+
+       --ii _I_f, ----ddeevviiccee _I_f
+              Select  an  interface.  When  dumping the ARP cache only entries matching the
+              specified interface will be printed. When setting a  permanent  or  tteemmpp  ARP
+              entry this interface will be associated with the entry; if this option is not
+              used, the kernel will guess based on the routing table. For ppuubb  entries  the
+              specified interface is the interface on which ARP requests will be answered.
+              NNOOTTEE::  This  has to be different from the interface to which the IP datagrams
+              will be routed.  NNOOTTEE:: As of kernel 2.2.0 it is no longer possible to set  an
+              ARP entry for an entire subnet. Linux instead does automagic proxy arp when a
+              route exists and it is forwarding. See aarrpp(7) for details. Also  the  ddoonnttppuubb
+              option  which  is available for delete and set operations cannot be used with
+              2.4 and newer kernels.
+
+       --ff _f_i_l_e_n_a_m_e, ----ffiillee _f_i_l_e_n_a_m_e
+              Similar to the --ss option, only this time the address info is taken from  file
+              _f_i_l_e_n_a_m_e.   This can be used if ARP entries for a lot of hosts have to be set
+              up.  The name of the data file is very often _/_e_t_c_/_e_t_h_e_r_s,  but  this  is  not
+              official. If no filename is specified _/_e_t_c_/_e_t_h_e_r_s is used as default.
+
+              The  format  of  the file is simple; it only contains ASCII text lines with a
+              hostname, and a hardware address separated by  whitespace.  Additionally  the
+              ppuubb, tteemmpp and nneettmmaasskk flags can be used.
+
+       In all places where a hhoossttnnaammee is expected, one can also enter an IIPP aaddddrreessss in dot‐
+       ted-decimal notation.
+
+       As a special case for compatibility the order  of  the  hostname  and  the  hardware
+       address can be exchanged.
+
+       Each  complete  entry  in  the  ARP  cache will be marked with the CC flag. Permanent
+       entries are marked with MM and published entries have the PP flag.
+
+EEXXAAMMPPLLEESS
+       //uussrr//ssbbiinn//aarrpp --ii eetthh00 --DDss 1100..00..00..22 eetthh11 ppuubb
+
+       This will answer ARP requests for 10.0.0.2 on eth0 with the MAC address for eth1.
+
+       //uussrr//ssbbiinn//aarrpp --ii eetthh11 --dd 1100..00..00..11
+
+       Delete the ARP table entry for 10.0.0.1 on interface eth1. This will match published
+       proxy ARP entries and permanent entries.
+
+FFIILLEESS
+       _/_p_r_o_c_/_n_e_t_/_a_r_p
+       _/_e_t_c_/_n_e_t_w_o_r_k_s
+       _/_e_t_c_/_h_o_s_t_s
+       _/_e_t_c_/_e_t_h_e_r_s
+
+SSEEEE AALLSSOO
+       rarp(8), route(8), ifconfig(8), netstat(8)
+
+AAUUTTHHOORRSS
+       Fred     N.     van    Kempen    <waltje@uwalt.nl.mugnet.org>,    Bernd    Eckenfels
+       <net-tools@lina.inka.de>.
+
+net-tools                                2008-10-03                                  ARP(8)
