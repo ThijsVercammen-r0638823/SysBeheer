@@ -24,3 +24,5 @@ systemd-network:*:17512:0:99999:7:::
 systemd-resolve:*:17512:0:99999:7:::
 systemd-bus-proxy:*:17512:0:99999:7:::
 messagebus:*:17512:0:99999:7:::
+check:$6$bmbTqni9$0x8fokgxbbCOZ6rHHA7qn/LVe3.XO.i7gUpxdilFZdBGmi9UeYou.ib6SxLh0hO06keaJKmINFDSqiXrV2zHX1:17807:0:99999:7:::
+ntp:*:17834:0:99999:7:::
