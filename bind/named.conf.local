@@ -11,25 +11,13 @@
 zone "thijs-vercammen.sb.uclllabs.be" {
         type master;
         file "/etc/bind/zones/db.thijs-vercammen.sb.uclllabs.be";
-        allow-transfer {193.191.177.190;};
+//        allow-transfer {193.191.177.190;};
 };
 
 //reverse zone
 zone "191.193.in-addr.arpa" {
 	type master;
-	file "/etc/bind/zones/db.193.191;
-	allow-transfer {193.191.177.190;};
+	file "/etc/bind/zones/db.193.191";
+//	allow-transfer {193.191.177.190;};
 };
 
-
-#zone "ns1.uclllabs.be" {
-#        type slave;
-#        file "db.ns1.uclllabs.be";
-#        masters {193.191.177.190;};
-#};
-
-#zone "ns2.uclllabs.be" {
-#	type slave;
-#	file db.ns2.uclllabs.be";
-#	masters {193.191.177.190;};
-#};

@@ -10,14 +10,12 @@ $TTL    604800
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      ns.thijs-vercammen.sb.uclllabs.be
+@       IN      NS      ns.thijs-vercammen.sb.uclllabs.be.
 @       IN      NS      ns1.uclllabs.be.
 @       IN      NS      ns2.uclllabs.be.
-#other student
-
+;
 
 ns.thijs-vercammen.sb.uclllabs.be.      IN      A       193.191.177.190
-ns1.uclllabs.be.        IN      A       193.191.177.254
-ns2.uclllabs.be.        IN      A       193.191.177.254
-#other student
+ns1.uclllabs.be.        IN      A       193.191.176.254
+ns2.uclllabs.be.        IN      A       193.191.177.4
 
