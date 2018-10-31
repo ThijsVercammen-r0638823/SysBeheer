@@ -1,0 +1,23 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns.thijs-vercammen.sb.uclllabs.be. admin.thijs-vercammen.sb.uclllabs.be. (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+//name servers
+	IN	NS	ns.thijs-vercammen.sb.uclllabs.be.
+	IN	NS	ns1.uclllabs.be.
+	IN	NS	ns2.uclllabs.be.
+//other student
+
+//PTR records
+
+190.177	IN	PTR	ns.thijs-vercammen.sb.uclllabs.be.; 193.191.177.190
+254.176	IN	PTR	ns1.uclllabs.be.;	193.191.176.254
+4.177	IN	PTR	ns2.uclllabs.be.;	193.191.177.4
+//other student
