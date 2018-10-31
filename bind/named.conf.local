@@ -12,14 +12,16 @@ zone "ns.thijs-vercammen.sb.uclllabs.be" {
         allow-transfer {193.191.177.190;};
 };
 
-zone "ns1.uclllabs.be" {
-        type slave;
-        file "db.ns1.uclllabs.be";
-        masters {193.191.177.190;};
-};
 
-zone "ns2.uclllabs.be" {
-	type slave;
-	file db.ns2.uclllabs.be";
-	masters {193.191.177.190;};
-};
+
+#zone "ns1.uclllabs.be" {
+#        type slave;
+#        file "db.ns1.uclllabs.be";
+#        masters {193.191.177.190;};
+#};
+
+#zone "ns2.uclllabs.be" {
+#	type slave;
+#	file db.ns2.uclllabs.be";
+#	masters {193.191.177.190;};
+#};
