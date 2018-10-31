@@ -6,12 +6,20 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+
+//forward zone
 zone "thijs-vercammen.sb.uclllabs.be" {
         type master;
         file "/etc/bind/zones/db.thijs-vercammen.sb.uclllabs.be";
         allow-transfer {193.191.177.190;};
 };
 
+//reverse zone
+zone "191.193.in-addr.arpa" {
+	type master;
+	file "/etc/bind/zones/db.193.191;
+	allow-transfer {193.191.177.190;};
+};
 
 
 #zone "ns1.uclllabs.be" {
