@@ -6,9 +6,9 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "ns.thijs-vercammen.sb.uclllabs.be" {
+zone "thijs-vercammen.sb.uclllabs.be" {
         type master;
-        file "/etc/bind/zones/db.ns.thijs-vercammen.sb.uclllabs.be";
+        file "/etc/bind/zones/db.thijs-vercammen.sb.uclllabs.be";
         allow-transfer {193.191.177.190;};
 };
 
