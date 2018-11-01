@@ -15,12 +15,12 @@ $TTL    604800
        IN      NS      ns2.uclllabs.be.
 ;
 
+ns      IN      A       193.191.177.190
+www     IN      A       193.191.177.190
 
 ns.thijs-vercammen.sb.uclllabs.be.      IN      A       193.191.177.190
 ns1.uclllabs.be.        IN      A       193.191.176.254
 ns2.uclllabs.be.        IN      A       193.191.177.4
 ns1.uclllabs.be.	IN	AAAA	2002:6a8:2880:a020::fe
 ns2.uclllabs.be.	IN	AAAA	2001:6a8:2880:a021::4
-ns	IN	A	193.191.177.190
-www	IN	A	193.191.177.190
 test.thijs-vercammen.sb.uclllabs.be	IN	A	193.191.177.254
