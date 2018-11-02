@@ -3,7 +3,7 @@
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     ns.thijs-vercammen.sb.uclllabs.be. admin.ns.thijs-vercammen.sb.uclllabs.be. (
+@       IN      SOA     ns.thijs-vercammen.sb.uclllabs.be. admin.thijs-vercammen.sb.uclllabs.be. (
                               4         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
