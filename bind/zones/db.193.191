@@ -17,3 +17,4 @@ $TTL	604800
 177.190	IN	PTR	ns.thijs-vercammen.sb.uclllabs.be.	;193.191.177.190
 176.254	IN	PTR	ns1.uclllabs.be.	;193.191.176.254
 177.4	IN	PTR	ns2.uclllabs.be.	;193.191.177.4
+177.254	IN	PTR	test.thijs-vercammen.sb.uclllabs.be.	;193.191.177.254
