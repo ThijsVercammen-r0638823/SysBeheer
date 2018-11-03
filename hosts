@@ -5,3 +5,9 @@ ff02::2		ip6-allrouters
 # --- BEGIN PVE ---
 193.191.177.190 thijs-vercammen.uclllabs.be thijs-vercammen
 # --- END PVE ---
+
+193.191.177.190 secure.thijs-vercammen.uclllabs.be
+193.191.177.190 supersecure.thijs-vercammen.uclllabs.be
+193.191.177.190 www.thijs-vercammen.uclllabs.be
+193.191.177.190 www1.thijs-vercammen.uclllabs.be
+193.191.177.190 www2.thijs-vercammen.uclllabs.be
