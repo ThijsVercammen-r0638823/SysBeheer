@@ -20,5 +20,8 @@ ns      IN      A       193.191.177.190
 www     IN      A       193.191.177.190
 test	IN	A	193.191.177.254
 
+www1     IN      A       193.191.177.190
+www2     IN      A       193.191.177.190
+
 thijs-vercammen.sb.uclllabs.be.      IN      A       193.191.177.190
 test.thijs-vercammen.sb.uclllabs.be.	IN	A	193.191.177.254
