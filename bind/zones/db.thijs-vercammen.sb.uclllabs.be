@@ -27,3 +27,5 @@ secure	IN	A	193.191.177.190
 supersecure	IN	A	193.191.177.190
 thijs-vercammen.sb.uclllabs.be.      IN      A       193.191.177.190
 test.thijs-vercammen.sb.uclllabs.be.	IN	A	193.191.177.254
+@	IN	MX	10 mx.thijs-vercammen.sb.uclllabs.be
+mx	IN	A	193.191.177.190
