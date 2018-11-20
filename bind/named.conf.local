@@ -21,3 +21,11 @@ zone "thijs-vercammen.sb.uclllabs.be" {
 //	allow-transfer {193.191.177.190;};
 //};
 
+zone foobar.thijs-vercammen.sb.uclllabs.be{
+	type master;
+	file "/etc/bind/zones/db.foobar.thijs-vercammen.sb.uclllabs.be";
+};
+zone foobar.thijs-vercammen.sb.uclllabs.be{
+	type master;
+	file "/etc/bind/zones/db.foobar.thijs-vercammen.sb.uclllabs.be";
+};
