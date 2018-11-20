@@ -8,3 +8,4 @@ foobar.thijs-vercammen.sb.uclllabs.be.	IN  SOA  ns.foobar.thijs-vercammen.sb.ucl
 
 foobar.thijs-vercammen.sb.uclllabs.be. 	IN	NS	 ns.thijs-vercammen.sb.uclllabs.be.
 foobar.thijs-vercammen.sb.uclllabs.be. 	IN	NS	 ns.uclllabs.be.
+test.foobar.thijs-vercammen.sb.uclllabs.be	IN	A	12.34.56.78

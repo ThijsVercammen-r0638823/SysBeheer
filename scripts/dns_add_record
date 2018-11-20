@@ -1,0 +1,20 @@
+#!/bin/bash
+
+$recordType
+$typeValue
+$domain
+$ip
+$zone
+recordType=$2;
+typeValue=$3;
+domain=$5;
+ip=$4;
+
+
+#if [$recordType = "MX"]; then
+#        echo -e "@     IN      MX       10 $typeValue" >> /etc/bind/zones/db.$domain;
+#        echo -e "$typeValue     IN      A       $ip" >> /etc/bind/zones/db.$domain;
+#fi
+	echo -e "$typeValue.$domain	IN	$recordType	$ip" >> /etc/bind/zones/db.$domain;
+
+service bind9 restart;
