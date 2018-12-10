@@ -18,12 +18,19 @@ $domain.thijs-vercammen.sb.uclllabs.be.	IN  SOA  ns.$domain.thijs-vercammen.sb.u
 $domain.thijs-vercammen.sb.uclllabs.be. \tIN\tNS\t ns.thijs-vercammen.sb.uclllabs.be.
 $domain.thijs-vercammen.sb.uclllabs.be. \tIN\tNS\t ns.uclllabs.be." > $zone
 
-echo -e "zone $domain.thijs-vercammen.sb.uclllabs.be{
+echo -e "zone \"$domain.thijs-vercammen.sb.uclllabs.be\"{
 \ttype master;
 \tfile \"/etc/bind/zones/db."$domain".thijs-vercammen.sb.uclllabs.be\";
 };" >> $localzone
 
 echo -e ""$domain".thijs-vercammen.sb.uclllabs.be.\tIN\tNS\t ns.thijs-vercammen.sb.uclllabs.be." >> $root
-service bind9 restart
+systemctl restart bind9
+
+line=$(grep "Serial" /etc/bind/zones/db.thijs-vercammen.sb.uclllabs.be)
+number=$(echo $line | cut -d \; -f 1)
+((number++))
+line2="$number; Serial"
+echo $line2;
+sed -i "s/.*Serial.*/\t$line2/g" /etc/bind/zones/db.thijs-vercammen.sb.uclllabs.be
 
 echo "Done!"

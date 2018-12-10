@@ -20,12 +20,15 @@ zone "thijs-vercammen.sb.uclllabs.be" {
 //	file "/etc/bind/zones/db.193.191";
 //	allow-transfer {193.191.177.190;};
 //};
-
-zone foobar.thijs-vercammen.sb.uclllabs.be{
+zone "foobar.thijs-vercammen.sb.uclllabs.be"{
 	type master;
 	file "/etc/bind/zones/db.foobar.thijs-vercammen.sb.uclllabs.be";
 };
-zone foobar.thijs-vercammen.sb.uclllabs.be{
+zone "something.thijs-vercammen.sb.uclllabs.be"{
 	type master;
-	file "/etc/bind/zones/db.foobar.thijs-vercammen.sb.uclllabs.be";
+	file "/etc/bind/zones/db.something.thijs-vercammen.sb.uclllabs.be";
+};
+zone "something2.thijs-vercammen.sb.uclllabs.be"{
+	type master;
+	file "/etc/bind/zones/db.something2.thijs-vercammen.sb.uclllabs.be";
 };

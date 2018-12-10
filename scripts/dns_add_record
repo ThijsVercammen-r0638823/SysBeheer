@@ -17,4 +17,12 @@ ip=$4;
 #fi
 	echo -e "$typeValue.$domain	IN	$recordType	$ip" >> /etc/bind/zones/db.$domain;
 
-service bind9 restart;
+line=$(grep "Serial" /etc/bind/zones/db.$domain)
+number=$(echo $line | cut -d \; -f 1)
+((number++))
+line2="$number; Serial"
+echo $line2;
+sed -i "s/.*Serial.*/\t$line2/g" /etc/bind/zones/db.$domain
+
+
+systemctl restart bind9
