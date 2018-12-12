@@ -4,7 +4,7 @@
 ;
 $TTL    604800
 @       IN      SOA     ns.thijs-vercammen.sb.uclllabs.be. admin.thijs-vercammen.sb.uclllabs.be. (
-	35; Serial
+	39; Serial
                              3h	        ; Refresh
                             30m          ; Retry
                              3w         ; Expire
@@ -13,6 +13,7 @@ $TTL    604800
 @       IN      NS      ns.thijs-vercammen.sb.uclllabs.be.
 @       IN      NS      ns1.uclllabs.be.
 @       IN      NS      ns2.uclllabs.be.
+@       IN      NS      ns5.he.net.
 ;
 
 @	IN	A	193.191.177.190

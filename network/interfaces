@@ -10,3 +10,4 @@ iface eth0 inet static
 iface eth0 inet6 static
 	address 2001:6a8:2880:a077::be/64
 	gateway 2001:6a8:2880:a077::1
+
